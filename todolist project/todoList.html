@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link href="css/bootstrap.min.css" type="text/css"  rel="stylesheet"/>
+    <link href="todolis.css" type="text/css" rel = "stylesheet" />
+    
+</head>
+<body>
+    <div id="div1">
+        <h1>Add your own to do list</h1>
+        <p>
+            <ul style="font-style:normal;">
+                <li>
+                    Makes your Day Perfect
+                </li>
+                <li>
+                    Helps to do Your Routine Task
+                </li>
+            </ul>
+        </p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" style="background-color: rgba(238,174,202,1) ;">
+                <h1>Things to Know</h1>
+                <p>This is the Page which helps to maintain the tasks that has to be </p>
+                <p>carried out in your day-to-day life</p>
+            </div>
+            <div class="col-sm-4" style=" background: rgb(238,174,202);
+            background: linear-gradient(to right, rgba(238,174,202,1) 30%, rgba(148,187,233,1) 62%);">
+                <h1>How To Use</h1>
+                <p>Once you enter the required task that has to be done it'll notify you by showing them to you</p>
+                <p>After you completed the tasks you can delete them by pressing the deleting button</p>
+            </div>
+            <div class="col-sm-4" style="background-color: rgba(148,187,233,1);">
+                <h1>Advantages</h1>
+                <p>This allows you to Maintain your day-to-day activities that has to be carried out daily by the individual</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="div3" class=" col-sm-12" style="background: background: rgb(238,174,202);
+            background: linear-gradient(to right, rgba(238,174,202,1) 30%, rgba(148,187,233,1) 62%);">
+            <h1>Enter Your Tasks in the Input Box</h1><br>
+            <div id="div2">
+            <input id="input">
+            <button onclick="add()">Add</button>
+            <ul id="list-contain">
+            <li>
+                Hello
+                <button onclick="del(event)">Delete</button>
+            </li>
+        </ul>
+        </div>
+        </div>
+    </div>
+        <script>
+            //selecting ul
+            var ul=document.getElementById("list-contain")
+            var input=document.getElementById("input")
+            function add(){
+                var listitem=document.createElement("li")
+                listitem.innerHTML=input.value + "<button onclick='del(event)'>Delete</button>"
+                listitem.style.fontFamily="italic"
+                ul.setAttribute("id","list-contain")
+                ul.append(listitem)
+            }
+            function del(event){
+                event.target.parentElement.remove()
+            }
+        </script>
+    </div>
+</body>
+</html>
